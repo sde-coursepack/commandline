@@ -9,15 +9,16 @@ package edu.virginia.cs.commandline;
 
 public class HelloNTimes {
     public static void main(String[] args) {
-        int count = getCount(args);
-        printHelloNTimes(count);
-    }
-
-    private static int getCount(String[] args) {
-        if (args.length == 0) {
-            throw new IllegalArgumentException("Error: you must include an integer argument");
+        try {
+            int count = Integer.parseInt(args[0]);
+            printHelloNTimes(count);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error: Must include a number argument. Example:\n"+
+                    "\tjava edu.virginia.cs.commandline.HelloNTimes 5");
+        } catch (NumberFormatException e) {
+            System.out.println("Error: First argument was not an integer. Example:\n"+
+                    "\tjava edu.virginia.cs.commandline.HelloNTimes 5");
         }
-        return Integer.parseInt(args[0]);
     }
 
     private static void printHelloNTimes(int count) {
