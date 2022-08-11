@@ -13,13 +13,13 @@ import java.util.*;
  *
  * 2022
  * 1900 -j
- * --julian 2000
+ * 2500 --julian
  */
 
 public class IsLeapYear {
     public static void main(String[] args) {
         List<String> argList = new ArrayList<>(Arrays.asList(args));
-        boolean isJulian = checkForAndRemoveJulianFlag(argList);
+        boolean isJulian = checkForJulianFlag(argList);
         int year = Integer.parseInt(argList.get(0));
         if (isJulian) {
             printJulianLeapYearMessage(year);
@@ -58,15 +58,8 @@ public class IsLeapYear {
         }
     }
 
-    private static boolean checkForAndRemoveJulianFlag(List<String> argList) {
-        if (argList.contains("-j")) {
-            argList.remove("-j");
-            return true;
-        } else if (argList.contains("--julian")) {
-            argList.remove("--julian");
-            return true;
-        }
-        return false;
+    private static boolean checkForJulianFlag(List<String> argList) {
+        return argList.contains("-j") || argList.contains("-julian");
     }
 
 
