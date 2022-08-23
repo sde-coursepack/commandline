@@ -8,7 +8,11 @@ package edu.virginia.cs.commandline;
  */
 public class HelloWho {
     public static void main(String[] args) {
-        String who = args[0];
-        System.out.println("Hello, " + who);
+        if (args.length == 0) {
+            String who = args[0];
+            System.out.println("Hello, " + who);
+        } else {
+            System.out.println("Error: No command line arguments");
+        }
     }
 }
