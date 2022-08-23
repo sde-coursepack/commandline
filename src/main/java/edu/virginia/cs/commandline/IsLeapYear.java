@@ -18,7 +18,7 @@ import java.util.*;
 
 public class IsLeapYear {
     public static void main(String[] args) {
-        List<String> argList = new ArrayList<>(Arrays.asList(args));
+        List<String> argList = Arrays.asList(args);
         boolean isJulian = checkForJulianFlag(argList);
         int year = Integer.parseInt(argList.get(0));
         if (isJulian) {
