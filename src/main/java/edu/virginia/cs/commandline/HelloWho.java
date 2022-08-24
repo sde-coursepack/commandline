@@ -8,11 +8,7 @@ package edu.virginia.cs.commandline;
  */
 public class HelloWho {
     public static void main(String[] args) {
-        try {
-            String who = args[0];
-            System.out.println("Hello, " + who);
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Error: No command line arguments");
-        }
+        String who = args[0];
+        System.out.println("Hello, " + who);
     }
 }
